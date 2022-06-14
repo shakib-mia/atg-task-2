@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [scrollResult, setScroll] = useState(0);
+  console.log(scrollResult);
+  window.addEventListener("scroll", () => {
+    setScroll(
+      parseInt(((window.pageYOffset / window.innerHeight) * 100 * 100) / 37)
+    );
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div
+      role="progressbar"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      id="progressbar"
+      style={{ "--value": scrollResult }}
+    ></div>
   );
 }
 
