@@ -3,23 +3,29 @@ import "./App.css";
 
 function App() {
   const [scrollResult, setScroll] = useState(0);
-  console.log(scrollResult);
   window.addEventListener("scroll", () => {
-    setScroll(parseInt((window.pageYOffset / window.innerHeight) * 38));
+    setScroll(parseInt((window.pageYOffset / window.innerHeight) * 15));
   });
 
   return (
-    <div style={{ display: "flex" }}>
-      <div>
+    <div className="container">
+      <div
+        className="scroll-bar"
+        style={{ width: "40vw", background: "#16263B" }}
+      >
+        <div className="progress-container">he</div>
         <div
           role="progressbar"
           aria-valuemin="0"
           aria-valuemax="100"
           id="progressbar"
-          style={{ "--value": scrollResult, position: "sticky", top: 10 }}
+          style={{
+            top: 100,
+            "--value": scrollResult,
+          }}
         ></div>
       </div>
-      <div>
+      <div style={{ width: "60vw", background: "#0D131B" }}>
         <div>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
           nisi blanditiis cum quidem eos totam culpa rem, reprehenderit iure

@@ -10,17 +10,18 @@
 }
 
 div[role="progressbar"] {
-  margin: 10px;
+  padding: 10px;
+  transform: rotate(-45deg);
   --size: 12rem;
-  --fg: #000;
-  --bg: #fff;
+  --fg: #fff;
+  --bg: transparent;
   --pgPercentage: var(--value);
   animation: growProgressBar 3s 1 forwards;
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
   background: 
-    radial-gradient(closest-side, white 95%, transparent 0 99.9%, transparent 0),
+    radial-gradient(closest-side, #15253A 95%, transparent 0 99.9%, transparent 0),
     conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0)
     ;
   font-family: Helvetica, Arial, sans-serif;
@@ -36,3 +37,17 @@ div[role="progressbar"]::before {
 body {
   margin: 0;
 }
+
+.scroll-bar {
+  position: relative;
+}
+
+.scroll-bar div {
+  position: fixed;
+  left: 31vw;
+}
+
+.container {
+  display: flex;
+}
+
