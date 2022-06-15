@@ -13,17 +13,17 @@ function App() {
         className="scroll-bar"
         style={{ width: "40vw", background: "#16263B" }}
       >
-        <div className="progress-container">he</div>
-        <div
-          role="progressbar"
-          aria-valuemin="0"
-          aria-valuemax="100"
-          id="progressbar"
-          style={{
-            top: 100,
-            "--value": scrollResult,
-          }}
-        ></div>
+        <div className="progress-container">
+          <div
+            role="progressbar"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            id="progressbar"
+            style={{
+              "--value": scrollResult,
+            }}
+          ></div>
+        </div>
       </div>
       <div style={{ width: "60vw", background: "#0D131B" }}>
         <div>

@@ -51,3 +51,18 @@ body {
   display: flex;
 }
 
+.progress-container{
+  top: 10rem;
+  position: relative;
+  width: 16rem;
+  height: 16rem;
+  background-color: #15253A;
+  border-radius: 50%;
+}
+
+#progressbar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;right: 0;margin: auto;
+}
