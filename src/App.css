@@ -100,6 +100,12 @@ body {
   display: flex;
   color: white;
   height: 100vh;
+  bottom: 0 !important;
+}
+
+.left-text div {
+  left: 5rem;
+  bottom: 10vh;
 }
 
 #dot-1 {

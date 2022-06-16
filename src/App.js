@@ -20,30 +20,68 @@ function App() {
         style={{ width: "40vw", background: "#16263B" }}
       >
         <div className="left-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus,
-          esse? Natus expedita enim et odit vero porro odio? Quo, dolorum.
+          <div>
+            <h1>ABC 456</h1>
+            <p>
+              We are the best <br /> web development company <br /> in the world
+              <span
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  marginTop: "20px",
+                }}
+              >
+                <div>View Case Study</div>
+                <div></div>
+              </span>
+            </p>
+          </div>
         </div>
 
         <div className="progress-container">
           <div id="title">
             {scrollResult >= 0 && scrollResult < 12 ? (
               <Title
+                short=""
+                big="25M+ Downloads"
+                bottomShort="on appstore & google playstore"
+              />
+            ) : scrollResult >= 12 && scrollResult < 25 ? (
+              <Title
+                short="The Next Big"
+                big="Blockchain"
+                bottomShort="Revolution"
+              />
+            ) : scrollResult >= 25 && scrollResult < 38 ? (
+              <Title
+                short="Powered by advance"
+                big="NASA"
+                bottomShort="algorithm"
+              />
+            ) : scrollResult >= 38 && scrollResult < 51 ? (
+              <Title
                 short="Redefining"
                 big="UX Strategy"
                 bottomShort="and UI design"
               />
-            ) : scrollResult >= 12 && scrollResult < 25 ? (
-              "second"
-            ) : scrollResult >= 25 && scrollResult < 38 ? (
-              "third"
-            ) : scrollResult >= 38 && scrollResult < 51 ? (
-              "fourth"
             ) : scrollResult >= 51 && scrollResult < 63 ? (
-              "fifth"
-            ) : scrollResult >= 63 ? (
-              "last"
+              <Title
+                short="Text Headline"
+                big="Text Headline"
+                bottomShort="Footer Headline"
+              />
+            ) : scrollResult >= 63 && scrollResult < 76 ? (
+              <Title
+                short="Developing ERP Resolution"
+                big="Text Headline"
+                bottomShort="In furniture industry"
+              />
             ) : (
-              ""
+              <Title
+                short="Biggest Classifieds"
+                big="East Asia"
+                bottomShort="Countries"
+              />
             )}
           </div>
           <div
