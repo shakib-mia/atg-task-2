@@ -8,17 +8,16 @@ import First from "../src/images/First.png";
 import Sixth from "../src/images/sixth.png";
 import Last from "../src/images/Last.png";
 import Fifth from "../src/images/Fifth.png";
+import enterprenout from "../src/images/world-communication-awards-for-best-digital-experience.png";
 
 function App() {
-  const [scrollResult, setScroll] = useState(0);
-  const [background, setBackground] = useState("");
+  const [scrollResult, setScroll] = useState();
 
-  const scrollCount = parseInt(
-    (window?.pageYOffset / window.innerHeight) * (89 / 7)
-  );
   window.addEventListener("scroll", () => {
+    const scrollCount = (window?.pageYOffset / window?.innerHeight) * (89 / 7);
     setScroll(scrollCount);
   });
+  console.log(scrollResult);
 
   return (
     <div className="container">
@@ -27,17 +26,17 @@ function App() {
         style={{
           width: "40vw",
           background:
-            scrollCount >= 0 && scrollCount < 12
+            scrollResult >= 0 && scrollResult < 12
               ? "#6311A8"
-              : scrollCount >= 12 && scrollCount < 25
+              : scrollResult >= 12 && scrollResult < 25
               ? "#4A27CC"
-              : scrollCount >= 25 && scrollCount < 38
+              : scrollResult >= 25 && scrollResult < 38
               ? "#0E123A"
-              : scrollCount >= 38 && scrollCount < 51
+              : scrollResult >= 38 && scrollResult < 51
               ? "#16263B"
-              : scrollCount >= 51 && scrollCount < 63
+              : scrollResult >= 51 && scrollResult < 63
               ? "#124CA1"
-              : scrollCount >= 63 && scrollCount < 76
+              : scrollResult >= 63 && scrollResult < 76
               ? "#012A90"
               : "#00834C",
         }}
@@ -45,33 +44,32 @@ function App() {
         <div className="left-text">
           <div>
             <h1>
-              {scrollCount >= 0 && scrollCount < 12
+              {scrollResult >= 0 && scrollResult < 12
                 ? "ABC 123"
-                : scrollCount >= 12 && scrollCount < 25
+                : scrollResult >= 12 && scrollResult < 25
                 ? "BCD 234"
-                : scrollCount >= 25 && scrollCount < 38
+                : scrollResult >= 25 && scrollResult < 38
                 ? "CDE 345"
-                : scrollCount >= 38 && scrollCount < 51
+                : scrollResult >= 38 && scrollResult < 51
                 ? "DEF 456"
-                : scrollCount >= 51 && scrollCount < 63
+                : scrollResult >= 51 && scrollResult < 63
                 ? "EFG 567"
-                : scrollCount >= 63 && scrollCount < 76
+                : scrollResult >= 63 && scrollResult < 76
                 ? "FGH 678"
                 : "GHI 789"}
             </h1>
-            <p>
+            <p style={{ marginBottom: "3rem" }}>
               We are the best <br /> web development company <br /> in the world
-              <span
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  marginTop: "20px",
-                }}
-              >
-                <div>View Case Study</div>
-                <div></div>
-              </span>
             </p>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+              }}
+            >
+              <div>View Case Study</div>
+              <div style={{ left: "30vw" }}>S K I P</div>
+            </div>
           </div>
         </div>
 
@@ -79,53 +77,53 @@ function App() {
           className="progress-container"
           style={{
             background:
-              scrollCount >= 0 && scrollCount < 12
+              scrollResult >= 0 && scrollResult < 12
                 ? "#6311A8"
-                : scrollCount >= 12 && scrollCount < 25
+                : scrollResult >= 12 && scrollResult < 25
                 ? "#4A27CC"
-                : scrollCount >= 25 && scrollCount < 38
+                : scrollResult >= 25 && scrollResult < 38
                 ? "#0E123A"
-                : scrollCount >= 38 && scrollCount < 51
+                : scrollResult >= 38 && scrollResult < 51
                 ? "#16263B"
-                : scrollCount >= 51 && scrollCount < 63
+                : scrollResult >= 51 && scrollResult < 63
                 ? "#124CA1"
-                : scrollCount >= 63 && scrollCount < 76
+                : scrollResult >= 63 && scrollResult < 76
                 ? "#012A90"
                 : "#00834C",
           }}
         >
           <div id="title">
-            {scrollCount >= 0 && scrollCount < 12 ? (
+            {scrollResult >= 0 && scrollResult < 12 ? (
               <Title
                 short=""
                 big="25M+ Downloads"
                 bottomShort="on appstore & google playstore"
               />
-            ) : scrollCount >= 12 && scrollCount < 25 ? (
+            ) : scrollResult >= 12 && scrollResult < 25 ? (
               <Title
                 short="The Next Big"
                 big="Blockchain"
                 bottomShort="Revolution"
               />
-            ) : scrollCount >= 25 && scrollCount < 38 ? (
+            ) : scrollResult >= 25 && scrollResult < 38 ? (
               <Title
                 short="Powered by advance"
                 big="NASA"
                 bottomShort="algorithm"
               />
-            ) : scrollCount >= 38 && scrollCount < 51 ? (
+            ) : scrollResult >= 38 && scrollResult < 51 ? (
               <Title
                 short="Redefining"
                 big="UX Strategy"
                 bottomShort="and UI design"
               />
-            ) : scrollCount >= 51 && scrollCount < 63 ? (
+            ) : scrollResult >= 51 && scrollResult < 63 ? (
               <Title
                 short="Text Headline"
                 big="Text Headline"
                 bottomShort="Footer Headline"
               />
-            ) : scrollCount >= 63 && scrollCount < 76 ? (
+            ) : scrollResult >= 63 && scrollResult < 76 ? (
               <Title
                 short="Developing ERP Resolution"
                 big="Text Headline"
@@ -133,6 +131,7 @@ function App() {
               />
             ) : (
               <Title
+                img={enterprenout}
                 short="Biggest Classifieds"
                 big="East Asia"
                 bottomShort="Countries"
@@ -144,25 +143,25 @@ function App() {
             aria-valuemin="0"
             aria-valuemax="100"
             id="progressbar"
+            aria-valuenow={scrollResult}
             style={{
+              value: scrollResult,
               background:
-                scrollCount >= 0 && scrollCount < 12
+                scrollResult >= 0 && scrollResult < 12
                   ? "#6311A8"
-                  : scrollCount >= 12 && scrollCount < 25
+                  : scrollResult >= 12 && scrollResult < 25
                   ? "#4A27CC"
-                  : scrollCount >= 25 && scrollCount < 38
+                  : scrollResult >= 25 && scrollResult < 38
                   ? "#0E123A"
-                  : scrollCount >= 38 && scrollCount < 51
+                  : scrollResult >= 38 && scrollResult < 51
                   ? "#16263B"
-                  : scrollCount >= 51 && scrollCount < 63
+                  : scrollResult >= 51 && scrollResult < 63
                   ? "#124CA1"
-                  : scrollCount >= 63 && scrollCount < 76
+                  : scrollResult >= 63 && scrollResult < 76
                   ? "#012A90"
                   : "#00834C",
-              "--value": scrollCount,
             }}
           >
-            {console.log(scrollCount)}
             <span className="dot" id="dot-1"></span>
             <span className="dot" id="dot-2"></span>
             <span className="dot" id="dot-3"></span>
