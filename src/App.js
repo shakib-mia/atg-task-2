@@ -4,6 +4,7 @@ import Title from "./components/Title";
 
 function App() {
   const [scrollResult, setScroll] = useState(0);
+  const [background, setBackground] = useState("");
 
   window.addEventListener("scroll", () => {
     const scrollCount = parseInt(
@@ -17,11 +18,41 @@ function App() {
     <div className="container">
       <div
         className="scroll-bar"
-        style={{ width: "40vw", background: "#16263B" }}
+        style={{
+          width: "40vw",
+          background:
+            scrollResult >= 0 && scrollResult < 12
+              ? "#6311A8"
+              : scrollResult >= 12 && scrollResult < 25
+              ? "#4A27CC"
+              : scrollResult >= 25 && scrollResult < 38
+              ? "#000000"
+              : scrollResult >= 38 && scrollResult < 51
+              ? "#000000"
+              : scrollResult >= 51 && scrollResult < 63
+              ? "#000000"
+              : scrollResult >= 63 && scrollResult < 76
+              ? "#000000"
+              : "#000000",
+        }}
       >
         <div className="left-text">
           <div>
-            <h1>ABC 456</h1>
+            <h1>
+              {scrollResult >= 0 && scrollResult < 12
+                ? "ABC 123"
+                : scrollResult >= 12 && scrollResult < 25
+                ? "BCD 234"
+                : scrollResult >= 25 && scrollResult < 38
+                ? "CDE 345"
+                : scrollResult >= 38 && scrollResult < 51
+                ? "DEF 456"
+                : scrollResult >= 51 && scrollResult < 63
+                ? "EFG 567"
+                : scrollResult >= 63 && scrollResult < 76
+                ? "FGH 678"
+                : "GHI 789"}
+            </h1>
             <p>
               We are the best <br /> web development company <br /> in the world
               <span
@@ -38,7 +69,25 @@ function App() {
           </div>
         </div>
 
-        <div className="progress-container">
+        <div
+          className="progress-container"
+          style={{
+            background:
+              scrollResult >= 0 && scrollResult < 12
+                ? "#6311A8"
+                : scrollResult >= 12 && scrollResult < 25
+                ? "#4A27CC"
+                : scrollResult >= 25 && scrollResult < 38
+                ? "#16263B"
+                : scrollResult >= 38 && scrollResult < 51
+                ? "#000000"
+                : scrollResult >= 51 && scrollResult < 63
+                ? "#000000"
+                : scrollResult >= 63 && scrollResult < 76
+                ? "#000000"
+                : "#000000",
+          }}
+        >
           <div id="title">
             {scrollResult >= 0 && scrollResult < 12 ? (
               <Title
