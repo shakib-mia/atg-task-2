@@ -1,13 +1,14 @@
 import { useState } from "react";
 import "./App.css";
+import Title from "./components/Title";
 
 function App() {
   const [scrollResult, setScroll] = useState(0);
-  const scrollCount = parseInt(
-    (window.pageYOffset / window.innerHeight) * (89 / 7)
-  );
 
   window.addEventListener("scroll", () => {
+    const scrollCount = parseInt(
+      (window?.pageYOffset / window.innerHeight) * (89 / 7)
+    );
     setScroll(scrollCount);
     console.log(scrollCount);
   });
@@ -18,7 +19,33 @@ function App() {
         className="scroll-bar"
         style={{ width: "40vw", background: "#16263B" }}
       >
+        <div className="left-text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus,
+          esse? Natus expedita enim et odit vero porro odio? Quo, dolorum.
+        </div>
+
         <div className="progress-container">
+          <div id="title">
+            {scrollResult >= 0 && scrollResult < 12 ? (
+              <Title
+                short="Redefining"
+                big="UX Strategy"
+                bottomShort="and UI design"
+              />
+            ) : scrollResult >= 12 && scrollResult < 25 ? (
+              "second"
+            ) : scrollResult >= 25 && scrollResult < 38 ? (
+              "third"
+            ) : scrollResult >= 38 && scrollResult < 51 ? (
+              "fourth"
+            ) : scrollResult >= 51 && scrollResult < 63 ? (
+              "fifth"
+            ) : scrollResult >= 63 ? (
+              "last"
+            ) : (
+              ""
+            )}
+          </div>
           <div
             role="progressbar"
             aria-valuemin="0"
@@ -28,15 +55,6 @@ function App() {
               "--value": scrollResult,
             }}
           >
-            <span>
-              {scrollCount >= 0 && scrollCount < 12
-                ? "Home"
-                : scrollCount >= 12 && scrollCount < 25
-                ? "second"
-                : scrollCount >= 25 && scrollCount < 38
-                ? "third"
-                : ""}
-            </span>
             <span className="dot" id="dot-1"></span>
             <span className="dot" id="dot-2"></span>
             <span className="dot" id="dot-3"></span>
