@@ -1,160 +1,170 @@
-@keyframes growProgressBar {
-  0%, 33% { --pgPercentage: 0; }
-  100% { --pgPercentage: var(--value); }
-}
-
-@property --pgPercentage {
-  syntax: '<number>';
-  inherits: false;
-  initial-value: 0;
-}
-
-div[role="progressbar"] {
-  padding: 10px;
-  transform: rotate(-45deg);
-  --size: 12rem;
-  --fg: #fff;
-  --bg: transparent;
-  --pgPercentage: var(--value);
-  animation: growProgressBar 3s 1 forwards;
-  width: var(--size);
-  height: var(--size);
-  border-radius: 50%;
-
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: calc(var(--size) / 5);
-  color: var(--fg);
-  border: 1px solid #fff;
-}
-
-div[role="progressbar"]::before {
-  counter-reset: percentage var(--value);
-}
-
-/* demo */
 body {
   margin: 0;
 }
 
-.scroll-bar {
-  position: relative;
+@media(max-width:767px) {
+  .container-lg {
+    display: none;
+  }
 }
 
-.scroll-bar div {
-  position: fixed;
-  left: 31vw;
-}
 
-.container {
-  display: flex;
-}
+@media (min-width: 768px) {
+  .container-sm {
+    display: none;
+  }
+  @keyframes growProgressBar {
+    0%, 33% { --pgPercentage: 0; }
+    100% { --pgPercentage: var(--value); }
+  }
 
-.progress-container{
-  top: 10rem;
-  position: relative;
-  width: 16rem;
-  height: 16rem;
-  border-radius: 50%;
-  z-index: 999;
-}
+  @property --pgPercentage {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 0;
+  }
 
-#progressbar {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-}
+  div[role="progressbar"] {
+    padding: 10px;
+    transform: rotate(-45deg);
+    --size: 12rem;
+    --fg: #fff;
+    --bg: transparent;
+    --pgPercentage: var(--value);
+    animation: growProgressBar 3s 1 forwards;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
 
-.blog{
-  height: 100vh;
-  color: white;
-}
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: calc(var(--size) / 5);
+    color: var(--fg);
+    border: 1px solid #fff;
+  }
 
-.blog-container{
-  width: 60vw;
-}
+  div[role="progressbar"]::before {
+    counter-reset: percentage var(--value);
+  }
+  .scroll-bar {
+    position: relative;
+  }
 
-#progressbar span{
-  position: absolute;
-  transform: rotate(45deg);
-}
+  .scroll-bar div {
+    position: fixed;
+    left: 31vw;
+  }
 
-.dot {
-  background: rgb(9, 9, 118);
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  border: 1px solid #fff;
-}
+  .container-lg {
+    display: flex;
+  }
 
-.left-text{
-  left: 0 !important;
-  display: flex;
-  color: white;
-  height: 100vh;
-  bottom: 0 !important;
-}
+  .progress-container{
+    top: 10rem;
+    position: relative;
+    width: 16rem;
+    height: 16rem;
+    border-radius: 50%;
+    z-index: 999;
+  }
 
-.left-text div {
-  left: 5rem;
-  bottom: 10vh;
-}
+  #progressbar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+  }
 
-#dot-1 {
-  top: -2px;
-  left: 6rem;
-}
-#dot-2 {
-  top: 1.8rem;
-  left: 10.9rem;
-}
-#dot-3 {
-  top: 106px;
-  left: 12.65rem;
-}
-#dot-4 {
-  top: 176px;
-  left: 10.7rem;
-}
-#dot-5 {
-  top: 12.65rem;
-  left: 6.1rem;
-}
-#dot-6 {
-  top: 169px;
-  left: 23px;
-}#dot-7 {
-  top: 90px;
-  left: -0.2rem;
-}
+  .blog{
+    height: 100vh;
+    color: white;
+  }
 
-.blog{
-  position: sticky;
-  top: 0;
-}
+  .blog-container{
+    width: 60vw;
+  }
 
-#title {
-  height: 125px;
-  z-index: 1;
-  top: 223px;
-  background-color: #15253A;
-  z-index: 100;
-}
+  #progressbar span{
+    position: absolute;
+    transform: rotate(45deg);
+  }
 
-*{
-  margin: 0;
-  padding: 0;
-  outline: 0;
-}
+  .dot {
+    background: rgb(9, 9, 118);
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+  }
 
-.blog img {
-  width: 60vw;
-  height: 100vh;
-}
+  .left-text{
+    left: 0 !important;
+    display: flex;
+    color: white;
+    height: 100vh;
+    bottom: 0 !important;
+  }
 
-.left-text img {
-  width: 100%;
-  height: 14%;
+  .left-text div {
+    left: 5rem;
+    bottom: 10vh;
+  }
+
+  #dot-1 {
+    top: -2px;
+    left: 6rem;
+  }
+  #dot-2 {
+    top: 1.8rem;
+    left: 10.9rem;
+  }
+  #dot-3 {
+    top: 106px;
+    left: 12.65rem;
+  }
+  #dot-4 {
+    top: 176px;
+    left: 10.7rem;
+  }
+  #dot-5 {
+    top: 12.65rem;
+    left: 6.1rem;
+  }
+  #dot-6 {
+    top: 169px;
+    left: 23px;
+  }#dot-7 {
+    top: 90px;
+    left: -0.2rem;
+  }
+
+  .blog{
+    position: sticky;
+    top: 0;
+  }
+
+  #title {
+    height: 125px;
+    z-index: 1;
+    top: 223px;
+    background-color: #15253A;
+    z-index: 100;
+  }
+
+  *{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+  }
+
+  .blog img {
+    width: 60vw;
+    height: 100vh;
+  }
+
+  .left-text img {
+    width: 100%;
+    height: 14%;
+  }
 }
