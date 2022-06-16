@@ -1,17 +1,23 @@
 import { useState } from "react";
 import "./App.css";
 import Title from "./components/Title";
+import Home from "../src/images/HomePage.png";
+import third from "../src/images/third.png";
+import second from "../src/images/second.png";
+import First from "../src/images/First.png";
+import Sixth from "../src/images/sixth.png";
+import Last from "../src/images/Last.png";
+import Fifth from "../src/images/Fifth.png";
 
 function App() {
   const [scrollResult, setScroll] = useState(0);
   const [background, setBackground] = useState("");
 
+  const scrollCount = parseInt(
+    (window?.pageYOffset / window.innerHeight) * (89 / 7)
+  );
   window.addEventListener("scroll", () => {
-    const scrollCount = parseInt(
-      (window?.pageYOffset / window.innerHeight) * (89 / 7)
-    );
     setScroll(scrollCount);
-    console.log(scrollCount);
   });
 
   return (
@@ -21,35 +27,35 @@ function App() {
         style={{
           width: "40vw",
           background:
-            scrollResult >= 0 && scrollResult < 12
+            scrollCount >= 0 && scrollCount < 12
               ? "#6311A8"
-              : scrollResult >= 12 && scrollResult < 25
+              : scrollCount >= 12 && scrollCount < 25
               ? "#4A27CC"
-              : scrollResult >= 25 && scrollResult < 38
-              ? "#000000"
-              : scrollResult >= 38 && scrollResult < 51
-              ? "#000000"
-              : scrollResult >= 51 && scrollResult < 63
-              ? "#000000"
-              : scrollResult >= 63 && scrollResult < 76
-              ? "#000000"
-              : "#000000",
+              : scrollCount >= 25 && scrollCount < 38
+              ? "#0E123A"
+              : scrollCount >= 38 && scrollCount < 51
+              ? "#16263B"
+              : scrollCount >= 51 && scrollCount < 63
+              ? "#124CA1"
+              : scrollCount >= 63 && scrollCount < 76
+              ? "#012A90"
+              : "#00834C",
         }}
       >
         <div className="left-text">
           <div>
             <h1>
-              {scrollResult >= 0 && scrollResult < 12
+              {scrollCount >= 0 && scrollCount < 12
                 ? "ABC 123"
-                : scrollResult >= 12 && scrollResult < 25
+                : scrollCount >= 12 && scrollCount < 25
                 ? "BCD 234"
-                : scrollResult >= 25 && scrollResult < 38
+                : scrollCount >= 25 && scrollCount < 38
                 ? "CDE 345"
-                : scrollResult >= 38 && scrollResult < 51
+                : scrollCount >= 38 && scrollCount < 51
                 ? "DEF 456"
-                : scrollResult >= 51 && scrollResult < 63
+                : scrollCount >= 51 && scrollCount < 63
                 ? "EFG 567"
-                : scrollResult >= 63 && scrollResult < 76
+                : scrollCount >= 63 && scrollCount < 76
                 ? "FGH 678"
                 : "GHI 789"}
             </h1>
@@ -73,53 +79,53 @@ function App() {
           className="progress-container"
           style={{
             background:
-              scrollResult >= 0 && scrollResult < 12
+              scrollCount >= 0 && scrollCount < 12
                 ? "#6311A8"
-                : scrollResult >= 12 && scrollResult < 25
+                : scrollCount >= 12 && scrollCount < 25
                 ? "#4A27CC"
-                : scrollResult >= 25 && scrollResult < 38
+                : scrollCount >= 25 && scrollCount < 38
+                ? "#0E123A"
+                : scrollCount >= 38 && scrollCount < 51
                 ? "#16263B"
-                : scrollResult >= 38 && scrollResult < 51
-                ? "#000000"
-                : scrollResult >= 51 && scrollResult < 63
-                ? "#000000"
-                : scrollResult >= 63 && scrollResult < 76
-                ? "#000000"
-                : "#000000",
+                : scrollCount >= 51 && scrollCount < 63
+                ? "#124CA1"
+                : scrollCount >= 63 && scrollCount < 76
+                ? "#012A90"
+                : "#00834C",
           }}
         >
           <div id="title">
-            {scrollResult >= 0 && scrollResult < 12 ? (
+            {scrollCount >= 0 && scrollCount < 12 ? (
               <Title
                 short=""
                 big="25M+ Downloads"
                 bottomShort="on appstore & google playstore"
               />
-            ) : scrollResult >= 12 && scrollResult < 25 ? (
+            ) : scrollCount >= 12 && scrollCount < 25 ? (
               <Title
                 short="The Next Big"
                 big="Blockchain"
                 bottomShort="Revolution"
               />
-            ) : scrollResult >= 25 && scrollResult < 38 ? (
+            ) : scrollCount >= 25 && scrollCount < 38 ? (
               <Title
                 short="Powered by advance"
                 big="NASA"
                 bottomShort="algorithm"
               />
-            ) : scrollResult >= 38 && scrollResult < 51 ? (
+            ) : scrollCount >= 38 && scrollCount < 51 ? (
               <Title
                 short="Redefining"
                 big="UX Strategy"
                 bottomShort="and UI design"
               />
-            ) : scrollResult >= 51 && scrollResult < 63 ? (
+            ) : scrollCount >= 51 && scrollCount < 63 ? (
               <Title
                 short="Text Headline"
                 big="Text Headline"
                 bottomShort="Footer Headline"
               />
-            ) : scrollResult >= 63 && scrollResult < 76 ? (
+            ) : scrollCount >= 63 && scrollCount < 76 ? (
               <Title
                 short="Developing ERP Resolution"
                 big="Text Headline"
@@ -139,9 +145,24 @@ function App() {
             aria-valuemax="100"
             id="progressbar"
             style={{
-              "--value": scrollResult,
+              background:
+                scrollCount >= 0 && scrollCount < 12
+                  ? "#6311A8"
+                  : scrollCount >= 12 && scrollCount < 25
+                  ? "#4A27CC"
+                  : scrollCount >= 25 && scrollCount < 38
+                  ? "#0E123A"
+                  : scrollCount >= 38 && scrollCount < 51
+                  ? "#16263B"
+                  : scrollCount >= 51 && scrollCount < 63
+                  ? "#124CA1"
+                  : scrollCount >= 63 && scrollCount < 76
+                  ? "#012A90"
+                  : "#00834C",
+              "--value": scrollCount,
             }}
           >
+            {console.log(scrollCount)}
             <span className="dot" id="dot-1"></span>
             <span className="dot" id="dot-2"></span>
             <span className="dot" id="dot-3"></span>
@@ -152,48 +173,27 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="blog-container">
-        <div className="blog">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit fugit
-          minus, eum hic molestias dolorum harum accusantium commodi blanditiis
-          aliquam, accusamus sint tenetur, sit suscipit laudantium cumque
-          numquam doloribus modi?
+      <div className="blog-container" style={{ background: "#6311A8" }}>
+        <div className="blog" style={{ background: "rgb(237 237 237)" }}>
+          <img src={First} alt="" />
         </div>
-        <div className="blog">
-          Laboriosam quos delectus cum voluptas dolorum. Non odio, voluptas
-          nihil porro perspiciatis iste, ad libero ea magni aperiam quos
-          repudiandae incidunt consequatur molestiae deserunt aliquam, quod
-          tempore deleniti fuga saepe?
+        <div className="blog" style={{ background: "rgb(49 28 128)" }}>
+          <img src={second} alt="" />
         </div>
-        <div className="blog">
-          Impedit voluptas quas dolorum consequuntur doloremque quod ad
-          repellendus natus sit commodi corrupti aliquid, ratione, laudantium
-          excepturi, mollitia esse aut! Libero, tempora suscipit similique
-          fugiat dolorum quisquam voluptatum maiores harum?
+        <div className="blog" style={{ background: "#141748" }}>
+          <img src={third} alt="" />
         </div>
-        <div className="blog">
-          Quidem voluptatibus nesciunt harum nobis corrupti, quis officiis vitae
-          corporis ducimus, dolorem impedit atque est dolores? Nesciunt
-          voluptatibus assumenda reprehenderit eum labore non dolores, nisi
-          error sed et fuga illo!
+        <div className="blog" style={{ background: "#0D131B" }}>
+          <img src={Home} alt="" />
         </div>
-        <div className="blog">
-          Illo, consequuntur suscipit! Rerum ipsum impedit error voluptatibus
-          laudantium nam enim magni quo harum odio, sequi voluptatum minus
-          debitis omnis blanditiis, eligendi hic porro. Ratione earum
-          perspiciatis unde sapiente rerum.
+        <div className="blog" style={{ background: "#2DCDDD" }}>
+          <img src={Fifth} alt="" />
         </div>
-        <div className="blog">
-          Dicta quis error dolorem delectus voluptate, doloribus repudiandae
-          modi est non vitae dolor a perspiciatis, incidunt facere molestias
-          enim distinctio vel expedita aliquid labore. Aspernatur atque
-          consequuntur illo veniam ut.
+        <div className="blog" style={{ background: "rgb(9 24 62)" }}>
+          <img src={Sixth} alt="" />
         </div>
-        <div className="blog">
-          Eligendi ab assumenda, optio autem esse praesentium quod molestias,
-          debitis, beatae vel quibusdam commodi dolorum pariatur sunt dolore
-          maxime cupiditate ea delectus laudantium ipsam ducimus inventore
-          nostrum. Reprehenderit, ad nesciunt.
+        <div className="blog" style={{ background: "#00B769" }}>
+          <img src={Last} alt="" />
         </div>
       </div>
     </div>
