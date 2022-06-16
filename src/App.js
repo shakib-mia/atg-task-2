@@ -43,6 +43,7 @@ function App() {
       >
         <div className="left-text">
           <div>
+            {scrollResult > 76 ? <img src={enterprenout} alt="" /> : ""}
             <h1>
               {scrollResult >= 0 && scrollResult < 12
                 ? "ABC 123"
@@ -131,7 +132,6 @@ function App() {
               />
             ) : (
               <Title
-                img={enterprenout}
                 short="Biggest Classifieds"
                 big="East Asia"
                 bottomShort="Countries"
